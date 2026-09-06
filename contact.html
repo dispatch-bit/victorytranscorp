@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Victory Trans Corp.</title>
     <meta name="description" content="Contact Victory Trans Corp. for reliable transportation and dispatch support. Request a quote or ask about our freight services.">
+    <link rel="icon" href="truck.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="site-page">
     <header class="site-header">
         <nav class="navbar" aria-label="Main navigation">
             <a href="index.html" class="brand">Victory Trans Corp.</a>
-            <div class="nav-links">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+                <span class="menu-toggle-label">Menu</span>
+            </button>
+            <div class="nav-links" id="site-navigation">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" aria-current="page">Contact</a>
             </div>
         </nav>
     </header>
 
     <main class="page-content">
         <section class="page-intro">
-            <p class="eyebrow">Get in touch</p>
             <h1>Let’s talk about your shipping needs.</h1>
             <p class="lead">Tell us what you need and we’ll help you move freight with reliable communication and steady support.</p>
         </section>
@@ -49,6 +52,7 @@
 
             <form class="contact-form" data-contact-form action="https://formspree.io/f/xaeydqwe" method="POST">
                 <input type="hidden" name="_subject" value="New inquiry from Victory Trans Corp website">
+                <input type="hidden" name="_next" value="https://victorytranscorp.com/thank-you.html">
                 <div class="field-row">
                     <div class="field-group">
                         <label for="full-name">Full Name</label>

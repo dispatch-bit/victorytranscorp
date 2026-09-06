@@ -65,10 +65,13 @@ body {
     color: var(--text);
 }
 
+.site-page {
+    background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("blue-truck.webp") center / cover fixed no-repeat;
+}
+
 .site-header {
     background: var(--header-bg);
     width: 100%;
-    border-bottom: 1px solid var(--card-border);
 }
 
 .navbar {
@@ -111,18 +114,70 @@ body {
     color: var(--header-hover);
 }
 
+.nav-links a[aria-current="page"] {
+    color: var(--header-hover);
+    font-weight: 700;
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--header-text);
+    cursor: pointer;
+    padding: 8px 12px;
+    font: inherit;
+    font-weight: 700;
+}
+
 .page-content {
-    max-width: 980px;
+    max-width: 1400px;
     margin: 40px auto;
     padding: 0 20px 40px;
 }
 
 .hero {
-    margin-bottom: 26px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    overflow: hidden;
+    padding: 48px 64px;
+    border-radius: 18px;
+    background: transparent;
+    margin-bottom: 2px;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+
+.hero h1,
+.hero .lead {
+    color: #ffffff;
+}
+
+.hero .button-secondary {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.65);
 }
 
 .page-intro {
     margin-bottom: 30px;
+}
+
+.site-page:not(.home-page) .page-content > h1,
+.site-page:not(.home-page) .page-content > p,
+.site-page:not(.home-page) .page-intro h1,
+.site-page:not(.home-page) .page-intro .lead {
+    color: #ffffff;
+}
+
+.site-page:not(.home-page) .page-content > p {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .eyebrow {
@@ -325,16 +380,32 @@ textarea {
 
 @media (max-width: 600px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 1fr auto;
         gap: 12px;
         padding: 18px 20px;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
+        display: none;
+        grid-column: 1 / -1;
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 12px;
+        padding-top: 8px;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 32px 24px;
     }
 
     .button {

@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            navLinks.classList.toggle('is-open', !isOpen);
+        });
+    }
+
     const form = document.querySelector('[data-contact-form]');
 
     if (!form) {
