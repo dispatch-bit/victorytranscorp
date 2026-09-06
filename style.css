@@ -1,6 +1,6 @@
 :root {
     --bg: #f7f7f5;
-    --bg-soft: #ffffff;
+    --bg-soft: rgba(255, 255, 255, 0.78);
     --text: #1f2937;
     --muted: #4b5563;
     --header-bg: #1f2937;
@@ -9,16 +9,16 @@
     --card-border: #e5e7eb;
     --button: #55677a;
     --button-text: #ffffff;
-    --soft-accent: #f3f5f7;
+    --soft-accent: rgba(255, 255, 255, 0.58);
     --shadow: rgba(17, 24, 39, 0.06);
-    --input-bg: #ffffff;
-    --input-border: #d1d5db;
+    --input-bg: rgba(255, 255, 255, 0.88);
+    --input-border: rgba(31, 41, 55, 0.24);
     --success: #138a56;
 }
 
 :root[data-theme="dark"] {
     --bg: #111827;
-    --bg-soft: #1f2937;
+    --bg-soft: rgba(31, 41, 55, 0.88);
     --text: #f3f4f6;
     --muted: #d1d5db;
     --header-bg: #0b1220;
@@ -27,17 +27,17 @@
     --card-border: #374151;
     --button: #a1aab7;
     --button-text: #0f172a;
-    --soft-accent: rgba(161, 170, 183, 0.12);
-    --shadow: rgba(0, 0, 0, 0.18);
-    --input-bg: #0f172a;
-    --input-border: #475569;
+    --soft-accent: rgba(31, 41, 55, 0.82);
+    --shadow: rgba(0, 0, 0, 0.28);
+    --input-bg: rgba(15, 23, 42, 0.92);
+    --input-border: rgba(203, 213, 225, 0.38);
     --success: #45c585;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #111827;
-        --bg-soft: #1f2937;
+        --bg-soft: rgba(31, 41, 55, 0.88);
         --text: #f3f4f6;
         --muted: #d1d5db;
         --header-bg: #0b1220;
@@ -46,10 +46,10 @@
         --card-border: #374151;
         --button: #a1aab7;
         --button-text: #0f172a;
-        --soft-accent: rgba(161, 170, 183, 0.12);
-        --shadow: rgba(0, 0, 0, 0.18);
-        --input-bg: #0f172a;
-        --input-border: #475569;
+        --soft-accent: rgba(31, 41, 55, 0.82);
+        --shadow: rgba(0, 0, 0, 0.28);
+        --input-bg: rgba(15, 23, 42, 0.92);
+        --input-border: rgba(203, 213, 225, 0.38);
         --success: #45c585;
     }
 }
@@ -66,7 +66,7 @@ body {
 }
 
 .site-page {
-    background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("blue-truck.webp") center / cover fixed no-repeat;
+    background: url("blue-truck.webp") center / cover fixed no-repeat;
 }
 
 .site-header {
@@ -315,7 +315,7 @@ p {
 }
 
 .contact-form {
-    background: var(--bg-soft);
+    background: linear-gradient(180deg, var(--bg-soft) 0%, var(--soft-accent) 100%);
     border: 1px solid var(--card-border);
     border-radius: 18px;
     box-shadow: 0 14px 28px var(--shadow);
